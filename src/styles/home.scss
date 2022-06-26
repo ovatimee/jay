@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+
+body {
+  font-family: Roboto Mono, monospace;
+}
+
+.mid {
+  background: rgba(0, 0, 0, 1);
+}
+
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+}
+
+.hero-text-section {
+  max-width: 17.5em;
+  width: calc(100% - 32px);
+  margin: 0 auto;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 4vw;
+  font-weight: 600;
+  h1 {
+    display: inline-block;
+  }
+}
+
+.feature-slides-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .feature-slide {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto;
+
+    .feature-slide-title {
+      font-size: 4vw;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-family: "Fugaz One", cursive;
+    }
+    .feature-slide-description {
+      font-size: 1.2rem;
+      margin-top: 30px;
+      line-height: 1.3;
+    }
+  }
+
+  .feature-slides-right {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0;
+      transition: all 1s ease-in-out;
+      transform: scale(1.3);
+      position: absolute;
+      top: 0;
+      &.as-primary {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+.footer {
+  height: 50vh;
+  background-color: #000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+
+  color: white;
+  font-weight: 600;
+
+  .input.textarea,
+  .input.email,
+  .input.name {
+    margin-top: 1rem;
+  }
+
+  .input.textarea {
+    padding: 0.5rem 1.4rem;
+    height: 200px;
+    width: 250px;
+  }
+  h1 {
+    text-align: center;
+    padding: 1rem 0 2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .input {
+    display: block;
+    border: 1px solid #ccc;
+    color: #fff;
+    outline: none;
+    display: block;
+    resize: none;
+    background-color: inherit;
+    border-radius: 0.7rem;
+    padding: 0.5rem 1.4rem;
+    width: 250px;
+  }
+
+  button{
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    margin-inline: auto;
+    padding: .3rem .8rem;
+    outline: none;
+    border: none;
+    border-radius: .5rem;
+  }
+}

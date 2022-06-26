@@ -1,5 +1,10 @@
-import React from "react"
+import React, {useRef} from "react"
+import Main from "../container/Main"
+
+import "../styles/home.scss"
 
 export default function Home() {
-  return <div>Hello world!</div>
+  return <div>
+    <Main />
+    </div>
 }
