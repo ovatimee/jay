@@ -1,8 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { featureSlides } from "../../data"
-import FeatureSlide from "./FeatureSlide"
-import gsap from 'gsap'
-import cn from "classnames"
+import React, { useState } from "react";
+import { featureSlides } from "./data"
+import FeatureSlide from "./FeatureSlide";
+import { gsap } from "gsap";
+import { useRef } from "react";
+import { useEffect } from "react";
+import cn from 'classnames';
+import "./styles.scss"
 
 function RenderImages({ activeFeatureIndex }) {
   return featureSlides.map(({ imageUrl }, index) => (
@@ -10,38 +13,38 @@ function RenderImages({ activeFeatureIndex }) {
       className={cn({ "as-primary": activeFeatureIndex === index })}
       key={imageUrl}
       style={{ backgroundImage: `url(${imageUrl})` }}
-      alt=""
+      src={imageUrl}
     />
-  ))
+  ));
 }
+export default function FeatureSlides() {
+  const [activeFeatureIndex, setFeatureIndex] = useState(0);
+  const featureSliderRef = useRef(null);
+  const featureSlidesRightRef = useRef(null);
+ ;
 
-function FeatureSlides() {
-  const [activeFeatureIndex, setFeatureIndex] = useState(0)
-  const featureSlideRef = useRef(null)
-  const featureSlidesRightRef = useRef(null)
+  useEffect(() => {
+    function stopTrigger() {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: featureSlidesRightRef.current,
+          start: "top top",
+          end: () => `+=${featureSliderRef.current.offsetHeight}`,
+          scrub: true,
+          pin: true,
+        },
+      });
 
-    useEffect(() => {
-      const stopTrigger = () =>{
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: featureSlidesRightRef.current,
-            start: "top top",
-            end: ()=> `+=${featureSlideRef.current.offsetHeight}`, 
-            scrub: true, 
-            pin: true
-          }
-        })
-        return tl
-      }
-      const master = gsap.timeline()
-      master.add(stopTrigger())
-    }, [])
+      return tl;
+    }
+    const master = gsap.timeline();
+    master.add(stopTrigger()); //with a gap of 2 seconds
+  }, []);
 
 
   return (
-    <>
-       <div className="feature-slides-container" ref={featureSlideRef}>
-      <div className="feature-slide-left">
+    <div ref={featureSliderRef} className="feature-slides-container">
+      <div className="feature-slides-left">
         {featureSlides.map((feature, index) => (
           <FeatureSlide
             updateActiveImage={setFeatureIndex}
@@ -52,13 +55,9 @@ function FeatureSlides() {
           />
         ))}
       </div>
-      <div className="feature-slides-right" ref={featureSlidesRightRef}>
+      <div ref={featureSlidesRightRef} className="feature-slides-right">
         <RenderImages activeFeatureIndex={activeFeatureIndex} />
       </div>
     </div>
-    </>
- 
-  )
+  );
 }
-
-export default FeatureSlides

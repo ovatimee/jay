@@ -4,7 +4,7 @@ import ContactForms from './ContactForms'
 const Footer = () => {
     return (
         <div className="footer">
-            Build Your Ideal Story Today
+            Let's build the dreams together.
             <ContactForms />
         </div>
     )

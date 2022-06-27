@@ -1,36 +1,52 @@
-import React, {useRef, useEffect} from "react"
-import "./styles.scss"
 
-const About = () => {
+import React, { useEffect, useRef, useState } from "react";
+import cn from "classnames";
+import SectionHeader from "./SectionHeader";
+
+
+import gsap from "gsap";
+import SplitText from "../../utils/Split3.min";
+import useOnScreen from "../../hooks/useOnScreen";
+
+import "./styles.scss";
+
+export default function About() {
+  const ref = useRef(null);
+
+  const [reveal, setReveal] = useState(false);
+  const onScreen = useOnScreen(ref);
+
+  useEffect(() => {
+    if (onScreen) setReveal(onScreen);
+  }, [onScreen]);
+
+  useEffect(() => {
+    if (reveal) {
+      const split = new SplitText("#headline", { type: "lines" });
+
+      gsap.to(split.lines, {
+        duration: 1,
+        y: -20,
+        opacity: 1,
+        stagger: 0.1,
+        ease: "power4.out",
+        // onComplete: () => split.revert(),
+      });
+    }
+  }, [reveal]);
 
   return (
-    <div className="about-container">
-<div className="hero-usedBy" >
-      <div className="hero-usedBy-copy" >
-        <div className="hero-usedBy-card" >
-          <h3>Design</h3>
-          <p>Create A digital projects with unique ideas</p>
-          <a href="#">20 Projects</a>
-        </div>
-        <div className="hero-usedBy-card">
-          <h3>Front-End</h3>
-          <p>I develop frontend with coding super smooth</p>
-          <a href="#">20 Projects</a>
-        </div>
-        <div className="hero-usedBy-card">
-          <h3>SEO</h3>
-          <p>Boost Your Business with SEO optimized</p>
-          <a href="#">20 Projects</a>
-        </div>
-      </div>
-      <div className="hero-usedBy-logos">
-        <p className="hero-usedBy-title">Every great design begin with better story </p>
-        <p className="p-text">Since beginning my journey as frontend developer, designer and a hacker. I've dont remote work for agencies, consulted for startups with talented people to create degital products for both business and consumer use. I'm quitely confident, naturally curius, and perpually working on improving my chopson design problem by time. </p>
-      </div>
-    </div>
-    </div>
-    
-  )
-}
+    <section
+      className={cn("about-section", { "is-reveal": reveal })}
+      data-scroll-section
+    >
+      <SectionHeader title="about" />
+      <p ref={ref} id="headline" className={cn({ "is-reveal": reveal })}>
+        Since beginning my journey as frontend developer, designer and a hacker. I've dont remote work for agencies, 
+        consulted for startups with talented people to create degital products for both business and consumer use. 
+        I'm quitely confident, naturally curius, and perpually working on improving my chopson design problem by time.
+      </p>
 
-export default About
+    </section>
+  );
+}

@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import Hero from "../component/Hero"
 import FeatureSlides from "../component/FeatureSlides"
 import About from "../component/SemiSection/About"
-import FeaturesHeader from "../component/SemiSection/FeaturesHeader"
 import Footer from "../component/Footer"
+import CustomCursor from "../component/CustomCursor"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 
@@ -23,15 +23,16 @@ const Main = () => {
   }, [])
 
   return loader ? (
-    <div className="" />
+    <div  />
   ) : (
+   
     <div >
+       <CustomCursor />
       <div className="mid">
         <Hero className="hero" />
         <About />
       </div>
       <div> 
-        <FeaturesHeader />
       <FeatureSlides />
       </div>
      <Footer />
