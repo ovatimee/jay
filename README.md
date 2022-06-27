@@ -1,4 +1,4 @@
-<p align="center"><img src="avatar.png" /></p>
+<p align="center"><img src="/src/assets/profile.png" /></p>
 <h1 align="center">Hi 👋, I'm Jason</h1>
 <h3 align="center">A passionate Frontend Developer from London 🇬🇧</h3>
 
