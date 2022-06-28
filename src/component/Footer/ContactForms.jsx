@@ -13,7 +13,7 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <h1 for="name">
-        Contact Us
+        Contact Me
       </h1>
       <input
         type="text"

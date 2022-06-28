@@ -1,21 +1,19 @@
 import React, { useState, useRef, useEffect } from "react";
 import { featureSlides } from "./data";
 import FeatureSlide from "./FeatureSlide";
+import SectionHeader from "./SectionHeader";
 import { gsap } from "gsap";
 import cn from 'classnames';
+
 import "./styles.scss"
 
 function RenderImages({ activeFeatureIndex }) {
   return featureSlides.map(({ imageUrl }, index) => (
-    <div
-    className={cn({ "phone-container": activeFeatureIndex === index })}
-    >
- <img
-     className={cn({ "phone-container": activeFeatureIndex === index })}
+    <img
+      className={cn({ "as-primary": activeFeatureIndex === index })}
       key={imageUrl}
-      src={imageUrl}
+      style={{ backgroundImage: `url(${imageUrl})` }}
     />
-    </div>
   ));
 }
 export default function FeatureSlides() {
@@ -24,16 +22,13 @@ export default function FeatureSlides() {
   const featureSlidesRightRef = useRef(null);
  ;
 
-
-
-
   useEffect(() => {
     function stopTrigger() {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: featureSliderRef.current,
+          trigger: featureSlidesRightRef.current,
           start: "top top",
-          end: () => `+=${featureSlidesRightRef.current.offsetHeight}`,
+          end: () => `+=2070`,
           scrub: true,
           pin: true,
         },
@@ -47,6 +42,8 @@ export default function FeatureSlides() {
 
 
   return (
+    <>
+    <SectionHeader title="Works" />
     <div ref={featureSliderRef} className="feature-slides-container">
       <div className="feature-slides-left">
         {featureSlides.map((feature, index) => (
@@ -60,10 +57,9 @@ export default function FeatureSlides() {
         ))}
       </div>
       <div ref={featureSlidesRightRef} className="feature-slides-right">
-        <div className="img-containder">
         <RenderImages activeFeatureIndex={activeFeatureIndex} />
-        </div>
       </div>
     </div>
+    </>
   );
 }

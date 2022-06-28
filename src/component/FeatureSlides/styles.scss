@@ -36,28 +36,31 @@
     flex-direction: column;
     justify-content: center;
 
-    .img-containder{
-      width: 300px;
-      height: 300px;
-      position: relative;
 
       img {
-        width: 100%;
-        height: 100%;
+        width: 80%;
+        height: 80%;
         background-position: center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: contain;
         opacity: 0;
         transition: all 1s ease-in-out;
         transform: scale(1.3);
         position: absolute;
-        top: 0;
         &.as-primary {
           opacity: 1;
           transform: scale(1.1);
         }
       }
 
-    }
   }
+}
+
+.works-header{
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Syncopate', sans-serif;
+  color: #606060;
+  padding-bottom: 50px;
 }

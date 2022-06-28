@@ -42,8 +42,8 @@ export default function About() {
     >
       <SectionHeader title="about" />
       <p ref={ref} id="headline" className={cn({ "is-reveal": reveal })}>
-        Since beginning my journey as frontend developer, designer and a hacker. I've dont remote work for agencies, 
-        consulted for startups with talented people to create degital products for both business and consumer use. 
+        I am a fronend developers and vim Enthusiast, focued on simplifying and
+        Customizing the web.
         I'm quitely confident, naturally curius, and perpually working on improving my chopson design problem by time.
       </p>
 
