@@ -1,5 +1,6 @@
 import hero from "../../assets/pinkpanda.webp"
 import saas from "../../assets/project1.png"
+import twitterClone from "../../assets/iphone12.png"
 
 const featureSlides = [
   {
@@ -16,8 +17,7 @@ const featureSlides = [
     title: "Immersive",
     description:
       "Web Stories allow you to feature full screen video, photos, and audio, seamlessly.",
-    imageUrl:
-      "https://images.unsplash.com/photo-1548366565-6bbab241282d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=934&q=100",
+    imageUrl: twitterClone
   },
 ];
 export {featureSlides };
