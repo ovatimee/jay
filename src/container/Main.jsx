@@ -8,17 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 
 
+const windowWidth = window.innerWidth
 
 const Main = () => {
   const [loader, setLoader] = useState(true)
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)  
-
-    useEffect(() => {
-
-    window.addEventListener('resize', () => {
-      setWindowWidth(window.innerWidth)
-    })
-  }, [])
 
 
 
