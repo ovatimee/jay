@@ -6,7 +6,6 @@ import {HiMenuAlt1} from "react-icons/hi"
 const HeroHeader = () => {
   return (
       <div className="hero-header">
-        <div></div>
         <img className="logo" src={Avartar} alt="logo"/>
         <div className="hamburger"> <HiMenuAlt1 /> </div>
       </div>

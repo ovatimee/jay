@@ -13,7 +13,6 @@ export default function FeatureSlide({
   useEffect(() => {
 
     if (onScreen) {
-      console.log(index);
       updateActiveImage(index);
     }
   }, [onScreen, index]);

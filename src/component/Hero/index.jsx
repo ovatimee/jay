@@ -1,7 +1,6 @@
 import React from "react"
 import HeroHeader from "./HeroHeader"
 import HeroCollage from "./HeroCollage"
-import HeroFooter from "./HeroFooter"
 
 
 import "./styles.scss"
@@ -15,7 +14,6 @@ const Hero = () => {
       <div className="hero-media">
         <HeroCollage />
       </div>
-      {/* <HeroFooter /> */}
     </div>
   )
 }

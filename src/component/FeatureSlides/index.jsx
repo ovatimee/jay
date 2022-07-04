@@ -13,22 +13,24 @@ function RenderImages({ activeFeatureIndex }) {
       className={cn({ "as-primary": activeFeatureIndex === index })}
       key={imageUrl}
       style={{ backgroundImage: `url(${imageUrl})` }}
+      // src={imageUrl}
     />
   ));
 }
-export default function FeatureSlides() {
+export default function FeatureSlides(windowWidth) {
   const [activeFeatureIndex, setFeatureIndex] = useState(0);
   const featureSliderRef = useRef(null);
   const featureSlidesRightRef = useRef(null);
  ;
 
+  console.log(windowWidth)
   useEffect(() => {
     function stopTrigger() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: featureSlidesRightRef.current,
           start: "top top",
-          end: () => `+=2070`,
+          end: windowWidth < 750? `+=1020` : `+=2070`,
           scrub: true,
           pin: true,
         },

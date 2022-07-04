@@ -5,6 +5,14 @@
     opacity: 0;
     padding: 5rem 2rem 0;
     text-align: center;
+      @media screen and (max-width: 1000px) {
+    font-size: 50px;
+  }
+
+  @media screen and (max-width: 750px) {
+   font-size: 25px;
+  }
+
     > div {
       opacity: 0;
       transform: translateY(0px);
@@ -13,7 +21,8 @@
       opacity: 1;
     }
   }
-  margin-bottom: 250px;
+  // margin-bottom: 250px;
+
 }
 
 .section-header{
@@ -23,4 +32,13 @@
   font-family: 'Syncopate', sans-serif;
   color: #606060;
   margin-top: 400px;
+
+  @media screen and (max-width: 1000px) {
+      margin-top: 500px;
+    
+  }
+
+  @media screen and (max-width: 750px) {
+    margin-top: 200px;
+  }
 }

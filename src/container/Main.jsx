@@ -11,7 +11,9 @@ import { gsap } from "gsap";
 
 const Main = () => {
   const [loader, setLoader] = useState(true)
-  
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)  
+
+
   useEffect(() => {
     setTimeout(() => {
       setLoader(false)
@@ -27,13 +29,13 @@ const Main = () => {
   ) : (
    
     <div >
-       <CustomCursor />
+    { windowWidth > 750? <CustomCursor /> : "" }
       <div className="mid">
-        <Hero className="hero" />
+        <Hero className="hero" windowWidth={windowWidth} />
         <About />
       </div>
       <div> 
-      <FeatureSlides />
+      <FeatureSlides windowWidth={windowWidth}/>
       </div>
      <Footer />
     </div>

@@ -8,10 +8,14 @@
   gap: 11rem;
   padding: 0 3.2rem;
 
+  @media screen and (max-width: 750px) {
+    padding: 0 1rem;
+    height: 100%;
+  }
+
   .hero-header {
     display: flex;
     justify-content: space-between;
-    margin-top: 130px;
 
     .logo {
       background-color: #fff;
@@ -78,6 +82,11 @@
     gap: 1rem;
     align-items: center;
 
+    @media screen and (max-width: 750px) {
+     display: grid;
+     place-items: center;
+    }
+
     .hero-phone-template {
       position: relative;
       width: 400px;
@@ -87,6 +96,11 @@
       border-right: 5px solid rgba(255, 255, 255, 1);
       transform: scale(1);
 
+      @media screen and (max-width: 750px) {
+        border: none;
+      }
+
+
       .middle-circle {
         width: 100%;
         height: 100%;
@@ -95,13 +109,14 @@
         justify-content: center;
         position: relative;
 
+
         .inside-wrapper {
           position: relative;
           top: 100px;
         }
         .hood {
-          width: 150px;
-          height: 150px;
+          width: 9.3rem;
+          height: 9.3rem;
           position: absolute;
           background-color: #aeaeaf;
           top: -205px;
@@ -242,6 +257,7 @@
     display: flex;
     justify-content: space-between;
     color: #fff;
+
     .nav ul {
       display: flex;
       gap: 2rem;
@@ -277,6 +293,7 @@
       font-weight: 500;
       padding-bottom: 0.5rem;
     }
+
   }
 
  
@@ -296,3 +313,10 @@
     max-width: 180px;
   }
 }
+
+    @media screen and (max-width: 750px) {
+      ul.hero-description{
+        display: none;
+      }
+    }
+

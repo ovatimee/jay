@@ -47,6 +47,9 @@
         transition: all 1s ease-in-out;
         transform: scale(1.3);
         position: absolute;
+        outline: none;
+        border: none;
+        border-color: none;
         &.as-primary {
           opacity: 1;
           transform: scale(1.1);
