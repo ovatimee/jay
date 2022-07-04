@@ -8,7 +8,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 
 
-const windowWidth = window.innerWidth
 
 const Main = () => {
   const [loader, setLoader] = useState(true)
@@ -30,7 +29,6 @@ const Main = () => {
   ) : (
    
     <div >
-    { windowWidth > 750? <CustomCursor /> : "" }
       <div className="mid">
         <Hero className="hero"  />
         <About />
