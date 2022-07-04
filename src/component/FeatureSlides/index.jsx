@@ -17,13 +17,21 @@ function RenderImages({ activeFeatureIndex }) {
     />
   ));
 }
-export default function FeatureSlides(windowWidth) {
+export default function FeatureSlides() {
   const [activeFeatureIndex, setFeatureIndex] = useState(0);
   const featureSliderRef = useRef(null);
   const featureSlidesRightRef = useRef(null);
- ;
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
-  console.log(windowWidth)
+
+  useEffect(() => {
+
+    window.addEventListener('resize', () => {
+      setWindowWidth(window.innerWidth)
+    })
+  }, [])
+
+
   useEffect(() => {
     function stopTrigger() {
       const tl = gsap.timeline({
