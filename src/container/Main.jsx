@@ -13,6 +13,14 @@ const Main = () => {
   const [loader, setLoader] = useState(true)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)  
 
+    useEffect(() => {
+
+    window.addEventListener('resize', () => {
+      setWindowWidth(window.innerWidth)
+    })
+  }, [])
+
+
 
   useEffect(() => {
     setTimeout(() => {
