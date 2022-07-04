@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="hero-media">
         <HeroCollage />
       </div>
-      <HeroFooter />
+      {/* <HeroFooter /> */}
     </div>
   )
 }
