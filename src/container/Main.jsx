@@ -3,7 +3,6 @@ import Hero from "../component/Hero"
 import FeatureSlides from "../component/FeatureSlides"
 import About from "../component/SemiSection/About"
 import Footer from "../component/Footer"
-import CustomCursor from "../component/CustomCursor"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 
@@ -11,7 +10,6 @@ import { gsap } from "gsap";
 
 const Main = () => {
   const [loader, setLoader] = useState(true)
-
 
 
   useEffect(() => {

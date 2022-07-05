@@ -57,7 +57,7 @@ const HeroPhoneBlock = () => {
   return (
     <div data-scroll className="hero-phone-block" >
       <div className="hero-description">
-        <h1 className="hero-greeting" >Hello.</h1>
+        <h1 className="hero-greeting" >Hello. <span>👋🏾</span></h1>
         <p className="hero-name">Jason Clinton</p>
         <p className="">Multi-Discipline Designer</p>
         <p ref={mobileRef}>based in London.</p>

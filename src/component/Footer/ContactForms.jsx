@@ -11,8 +11,8 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h1 for="name">
-        Contact Me
+      <h1>
+        Drop me a line
       </h1>
       <input
         type="text"
