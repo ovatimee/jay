@@ -13,6 +13,7 @@ function RenderImages({ activeFeatureIndex }) {
       className={cn({ "as-primary": activeFeatureIndex === index })}
       key={imageUrl}
       style={{ backgroundImage: `url(${imageUrl})` }}
+      src="http://upload.wikimedia.org/wikipedia/commons/c/ce/Transparent.gif"
     />
   ));
 }
